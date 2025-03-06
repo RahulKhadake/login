@@ -1,0 +1,47 @@
+
+  <div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="row w-100">
+      <!-- First Login Form -->
+      <div class="col-md-5">
+        <div class="login-container">
+          <h5>Login using FormsModule</h5>
+          <div class="alert alert-danger" id="error-message" role="alert">
+            Invalid username or password!
+          </div>
+          <form id="login-form">
+            <div class="mb-3">
+              <label for="username1" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username1" name="username" placeholder="Enter username" required [(ngModel)]="userObj.username">
+            </div>
+            <div class="mb-3">
+              <label for="password1" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password1" name="password" placeholder="Enter password" required [(ngModel)]="userObj.password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-custom" (click)="login()">Login</button>
+          </form>
+        </div>
+      </div>
+  
+      <!-- Second Login Form -->
+      <div class="col-md-5">
+        <div class="login-container">
+          <h5>Login with ReactForms </h5>
+          <div class="alert alert-danger" id="error-message2" role="alert">
+            Invalid credentials!
+          </div>
+          <form id="login-form-2" [formGroup]="loginForm">
+            <div class="mb-3">
+              <label for="username2" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username2" placeholder="Enter username" required formControlName="username">
+            </div>
+            <div class="mb-3">
+              <label for="password2" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password2" placeholder="Enter password" required formControlName="password">
+            </div>
+            <button type="button" class="btn btn-secondary btn-custom" (click)="LOgin()">Login</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  
