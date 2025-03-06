@@ -1,0 +1,34 @@
+
+<div class="container-fluid">
+<div class="card">
+<div class="card-header">
+  <h3>Signal</h3>
+</div>
+<div class="card-body">
+    <div>
+        <h3>Signal</h3>
+        <p>Signal is a type of Observable that emits numeric values. It is a special type of Observable 
+            that shares a single execution path among observers.</p>
+            
+            <button class="btn btn-primary" (click)="AccessSignalValue()">Signal</button>
+   FirstValue:         {{courseName()}}
+    </div>
+    <div>
+        <h5>Udate method</h5>
+        @for(item of cityList(); track $index){
+              <ul>
+                <li>{{item}}</li>
+              </ul>
+        }
+        <input type="text" class="form-control" placeholder="Enter City" [(ngModel)]="cityName">
+        <button class="btn btn-primary" (click)="AddCity()">Update</button>
+    </div>
+<div class="from-control">
+  <input type="text" class="form-control" placeholder="Enter  data" #textValue>
+</div><hr>
+<div class="mb-3">
+    <button class="btn btn-primary" (click)="checkValue()">CheckValue</button>
+</div>
+</div>
+</div>
+</div>
