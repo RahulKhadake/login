@@ -2,7 +2,7 @@
   <div class="container d-flex justify-content-center align-items-center vh-100">
     <div class="row w-100">
       <!-- First Login Form -->
-      <div class="col-md-5">
+      <div class="col-md-4">
         <div class="login-container">
           <h5>Login using FormsModule</h5>
           <div class="alert alert-danger" id="error-message" role="alert">
@@ -23,7 +23,7 @@
       </div>
   
       <!-- Second Login Form -->
-      <div class="col-md-5">
+      <div class="col-md-4">
         <div class="login-container">
           <h5>Login with ReactForms </h5>
           <div class="alert alert-danger" id="error-message2" role="alert">
@@ -39,6 +39,26 @@
               <input type="password" class="form-control" id="password2" placeholder="Enter password" required formControlName="password">
             </div>
             <button type="button" class="btn btn-secondary btn-custom" (click)="LOgin()">Login</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="login-container">
+          <h5>Login with API port it will work 4209</h5>
+          <div class="alert alert-danger" id="error-message2" role="alert">
+            Invalid credentials!
+          </div>
+          <form id="login-form-2" [formGroup]="loginForm">
+            <div class="mb-3">
+              <label for="username2" class="form-label">Username</label>
+              <input type="text" class="form-control" id="username2" placeholder="Enter username" required formControlName="username">
+            </div>
+            <div class="mb-3">
+              <label for="password2" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password2" placeholder="Enter password" required formControlName="password">
+            </div>
+            <button type="button" class="btn btn-secondary btn-custom" (click)="LoginAPi()">Login</button>
           </form>
         </div>
       </div>
