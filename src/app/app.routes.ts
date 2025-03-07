@@ -3,6 +3,7 @@ import { LoginComponent } from './login/login.component';
 import { Component } from '@angular/core';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SignalComponent } from './signal/signal.component';
+import { UserListComponent } from './user-list/user-list.component';
 
 export const routes: Routes = [
 
@@ -17,5 +18,8 @@ export const routes: Routes = [
     },
     {
         path:'Signal',component:SignalComponent
+    },
+    {
+        path:'userList',component:UserListComponent
     }
 ];

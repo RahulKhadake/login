@@ -1,10 +1,11 @@
 import { Component, ElementRef, signal, Signal, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-signal',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,NavbarComponent],
   templateUrl: './signal.component.html',
   styleUrl: './signal.component.css'
 })

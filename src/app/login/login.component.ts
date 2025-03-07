@@ -19,6 +19,11 @@ export class LoginComponent {
       username:['',Validators.required],
       password:['',Validators.required]
     });
+
+    this.LoginForm=this.fb.group({
+      EmailId:['',Validators.required],
+      Password:['',Validators.required]
+    })
   }
   router=inject(Router);
 
@@ -72,5 +77,33 @@ LoginAPi(){
       console.log('Completed');
     }
   });
+}
+
+LoginForm!:FormGroup;
+
+tokenLoginAPI(){
+
+  const fromvalue=this.LoginForm.value;
+
+debugger
+this.loginSer.tokenAPiURl(fromvalue).subscribe({
+   next:(res:any)=> {
+     console.log(res,"Checking");
+
+     if(res.result){
+        alert('Login Success');
+        localStorage.setItem("UserTken",res.data.token);
+        this.router.navigateByUrl('navbar');
+     }
+   },
+   error :(err) =>{
+     alert('seomething went wrong')
+   },
+   complete() {
+     console.log('Completed');
+   },
+})
+
+
 }
 }
