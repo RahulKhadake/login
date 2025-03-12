@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<hr>
+<div class="container-fluid">
+    <div class="card">
+<div class="card-header">
+<h5>Depenent Dropdown</h5>
+</div>
+<div class="card-body">
+    <div class="row">
+        <div class="col-3">
+        <label>Select State</label>
+        <select class="form-select "[(ngModel)]="SelectedState" (change)="getAlldistrictbyStateId()">
+         <option *ngFor="let state of StateList" [value]="state.stateId" selected hidden>{{state.stateName}}</option>
+        </select>
+        </div>
+        <div class="col-4">
+            <label>Select District</label>
+              <select class="form-select" [(ngModel)]="Selecteddestrict" (change)="onDistrictChange()">
+                  <option *ngFor="let district of districtsList" [value]="district.districtId" selected hidden>{{district.districtName}}</option>
+              </select>
+          </div>
+        <div class="col-4">
+          <label>Select City</label>
+            <select class="form-select" [(ngModel)]="SelectedCity">
+                <option *ngFor="let city of cities" [value]="city.cityId" selected hidden>{{city.cityName}}</option>
+            </select>
+        </div>
+    </div>
+</div>
+    </div>
+
+</div>
+

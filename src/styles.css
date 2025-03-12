@@ -3,3 +3,8 @@ body {
     background-color: #f8f9fa;
     font-family: Arial, sans-serif;
   }
+
+  .navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: hsl(0, 89%, 48%) !important; /* Change the color as needed */
+  }

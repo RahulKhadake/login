@@ -8,6 +8,8 @@ import { errorInterceptor } from './Interceptor/error.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),
-    provideHttpClient(withInterceptors([tokenInterceptor,errorInterceptor])),
+    provideHttpClient(withInterceptors([tokenInterceptor,errorInterceptor],
+      
+    )),
   ]
 };

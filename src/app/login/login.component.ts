@@ -61,8 +61,17 @@ LoginAPi(){
       next:(res:any)=>{
         if(res.result){
           alert('Login Success');
+          if(res.data.role=='Customer'){
+            // this.router.navigateByUrl('myApplication');
+            this.router.navigateByUrl('navbar');
+          }
+          else{
+            // this.router.navigateByUrl('loanApplication');
+            this.router.navigateByUrl('navbar');
+          }
           sessionStorage.setItem('user data',JSON.stringify(res.data));
-          this.router.navigateByUrl('navbar');
+          sessionStorage.setItem('userlogin',JSON.stringify(res.data));
+           this.router.navigateByUrl('navbar');
         }else{
           if(res.message){
             alert(res.message);
@@ -82,9 +91,7 @@ LoginAPi(){
 LoginForm!:FormGroup;
 
 tokenLoginAPI(){
-
   const fromvalue=this.LoginForm.value;
-
 debugger
 this.loginSer.tokenAPiURl(fromvalue).subscribe({
    next:(res:any)=> {
